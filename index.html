@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neighborhood Mini-Mart - Home</title>
+<meta name="generator" content="WYSIWYG Web Builder 21 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/fontawesome7.min.css" rel="stylesheet">
+<link href="css/DiscountStopMarket.css?v=3" rel="stylesheet">
+<link href="css/index.css?v=3" rel="stylesheet">
+<script src="jquery-3.7.1.min.js"></script>
+<script src="wb.overlay.min.js"></script>
+<link rel="stylesheet" href="magnificpopup/magnific-popup.css">
+<script src="magnificpopup/jquery.magnific-popup.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+const galleryPhotoGallery2 = document.querySelector('#PhotoGallery2 .thumbnails');
+function layoutPhotoGallery2()
+{
+   const items = galleryPhotoGallery2.querySelectorAll('#PhotoGallery2 .thumbnails .thumbnail');
+   const cw = galleryPhotoGallery2.clientWidth;
+   const targetRowHeight = Math.max(150, Math.min(250, cw / 10));
+   items.forEach(item => 
+   {
+      const img = item.querySelector('img');
+      const apply = () => 
+      {
+         if (!img.naturalWidth || !img.naturalHeight) return;
+         const ratio = img.naturalWidth / img.naturalHeight;
+         const cs = getComputedStyle(img);
+         const vBorder = (parseFloat(cs.borderTopWidth) || 0) + (parseFloat(cs.borderBottomWidth) || 0);
+         const hBorder = (parseFloat(cs.borderLeftWidth) || 0) + (parseFloat(cs.borderRightWidth) || 0);
+         const figureWidth = Math.max(0, Math.round(ratio * (targetRowHeight - vBorder) + hBorder));
+         item.style.width = figureWidth + 'px';
+         item.style.flexGrow = ratio;
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener('load', apply, { once: true });
+   });
+}
+requestAnimationFrame(layoutPhotoGallery2);
+const roPhotoGallery2 = new ResizeObserver(layoutPhotoGallery2);
+roPhotoGallery2.observe(galleryPhotoGallery2);
+window.addEventListener('resize', layoutPhotoGallery2);
+const galleryPhotoGallery3 = document.querySelector('#PhotoGallery3 .thumbnails');
+function layoutPhotoGallery3()
+{
+   const items = galleryPhotoGallery3.querySelectorAll('#PhotoGallery3 .thumbnails .thumbnail');
+   const cw = galleryPhotoGallery3.clientWidth;
+   const targetRowHeight = Math.max(150, Math.min(250, cw / 10));
+   items.forEach(item => 
+   {
+      const img = item.querySelector('img');
+      const apply = () => 
+      {
+         if (!img.naturalWidth || !img.naturalHeight) return;
+         const ratio = img.naturalWidth / img.naturalHeight;
+         const cs = getComputedStyle(img);
+         const vBorder = (parseFloat(cs.borderTopWidth) || 0) + (parseFloat(cs.borderBottomWidth) || 0);
+         const hBorder = (parseFloat(cs.borderLeftWidth) || 0) + (parseFloat(cs.borderRightWidth) || 0);
+         const figureWidth = Math.max(0, Math.round(ratio * (targetRowHeight - vBorder) + hBorder));
+         item.style.width = figureWidth + 'px';
+         item.style.flexGrow = ratio;
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener('load', apply, { once: true });
+   });
+}
+requestAnimationFrame(layoutPhotoGallery3);
+const roPhotoGallery3 = new ResizeObserver(layoutPhotoGallery3);
+roPhotoGallery3.observe(galleryPhotoGallery3);
+window.addEventListener('resize', layoutPhotoGallery3);
+});
+</script>
+<script>
+$(document).ready(function()
+{
+   var prevScrollTop = 0;
+   $(window).scroll(function(event)
+   {
+      var scrollTop = $(this).scrollTop();
+      if (Math.abs(prevScrollTop - scrollTop) <= 5)
+         return;
+      if (scrollTop < prevScrollTop)
+      {
+         $('#PageHeader1').removeClass('scroll-up');
+      }
+      else
+      {
+         $('#PageHeader1').addClass('scroll-up');
+      }
+      prevScrollTop = scrollTop;
+   });
+   $("a[href*='#featured-essentials-1']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_featured-essentials-1').offset().top }, 600, 'linear');
+   });
+   $("a[href*='#fresh-produce']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_fresh-produce').offset().top }, 600, 'linear');
+   });
+   $("a[href*='#store-hours']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_store-hours').offset().top }, 600, 'linear');
+   });
+   $("a[href*='#store-hours-1']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_store-hours-1').offset().top }, 600, 'linear');
+   });
+   $("a[data-rel='gallery3PhotoGallery']").attr('rel', 'gallery3PhotoGallery');
+   $("#gallery3PhotoGallery").magnificPopup({delegate:'a', type:'image', zoom: { enabled: true, duration: 300, easing: 'ease-in-out' }, gallery: {enabled: true, navigateByImgClick: true}});
+   $("a[data-rel='PhotoGallery1']").attr('rel', 'PhotoGallery1');
+   $("#PhotoGallery1").magnificPopup({delegate:'a', type:'image', zoom: { enabled: true, duration: 300, easing: 'ease-in-out' }, gallery: {enabled: true, navigateByImgClick: true}});
+   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
+   $('#OverlayMenu1').on('click', function(e)
+   {
+      $.overlay.toggle($('#OverlayMenu1-overlay'));
+      return false;
+   });
+   $("a[href*='#LayoutGrid5']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid5').offset().top }, 600, 'linear');
+   });
+   $("a[data-rel='PhotoGallery2']").attr('rel', 'PhotoGallery2');
+   $("#PhotoGallery2").magnificPopup({delegate:'a', type:'image', zoom: { enabled: true, duration: 300, easing: 'ease-in-out' }, gallery: {enabled: true, navigateByImgClick: true}});
+   $("a[data-rel='PhotoGallery3']").attr('rel', 'PhotoGallery3');
+   $("#PhotoGallery3").magnificPopup({delegate:'a', type:'image', zoom: { enabled: true, duration: 300, easing: 'ease-in-out' }, gallery: {enabled: true, navigateByImgClick: true}});
+});
+</script>
+</head>
+<body>
+<div id="PageHeader1">
+<div id="PageHeader1_Container">
+<div id="wb_OverlayMenu1">
+<a href="#" id="OverlayMenu1" class="wb-theme-button">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</a>
+</div>
+<div id="wb_Text20">
+<span style="color:#FFFFFF;">DISCOUNT STOP MARKET</span></div>
+</div>
+</div>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div id="wb_Text19">
+<span style="color:#FFFFFF;font-family:'Fraunces 72pt 72pt NonWonky';font-size:35px;">DISCOUNT STOP MARKET</span>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_main-nav" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+<span itemprop="name"><a href="#featured-essentials-1" title="Featured Essentials" itemprop="url">Featured Essentials</a></span><span itemprop="name"><a href="#fresh-produce" title="Fish &amp; Chips" itemprop="url">Fish & Chips</a></span><span itemprop="name"><a href="#store-hours-1" title="Store Hours &amp; Map" itemprop="url">Store Hours & Map</a></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_home-hero">
+<div id="home-hero-overlay"></div>
+<div id="home-hero">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Heading1">
+<h1 id="Heading1">Your Neighborhood Market</h1>
+</div>
+<div id="wb_Text1">
+<p>Local Convenience just around the corner</p>
+</div>
+<a id="Button1" href="#store-hours">LOCATION</a>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid7">
+<div id="LayoutGrid7">
+<div class="row">
+<div class="col-1">
+<marquee direction="left" scrolldelay="40" scrollamount="4" behavior="scroll" loop="0" id="Marquee1" onmouseover="this.stop()" onmouseout="this.start()"><span style="color:#000000;font-family:'Segoe UI Emoji';font-size:16px;line-height:15px;">🥤</span><span style="color:#000000;font-family:Arial;font-size:16px;line-height:15px;"> </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Cold Tallboys&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp;&nbsp; 🌸 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Fresh Flowers&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:'Segoe UI Emoji';font-size:16px;line-height:15px;">🥭</span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;"> </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Mango Candy&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp; ☕&nbsp; </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Hot Coffee&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:'Segoe UI Emoji';font-size:16px;line-height:15px;">🌶️ </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Hot Sauce Wall&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp; 🍫 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Candy Bars&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp; 🍺 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Ice Cold Beer&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆</span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">&nbsp;&nbsp; </span><span style="color:#FFFFFF;font-family:'Segoe UI Emoji';font-size:16px;line-height:15px;">🧃</span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;"> Juices &amp; Drinks&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">◆&nbsp;&nbsp; 🌮 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Late-Night Snacks</span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:15px;">&nbsp;&nbsp; ◆&nbsp;&nbsp; 💊 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:15px;">Aspirin &amp; More&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:12px;">◆&nbsp;&nbsp; 🍦 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:12px;">Ice Cream Bars</span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:12px;">&nbsp;&nbsp; ◆&nbsp;&nbsp; 🎰 </span><span style="color:#FFFFFF;font-family:Arial;font-size:16px;line-height:12px;">Lottery Tickets&nbsp;&nbsp; </span><span style="color:#FF8C00;font-family:Arial;font-size:16px;line-height:12px;">◆</span></marquee>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_featured-essentials">
+<div id="featured-essentials">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_featured-essentials-1">
+<div id="featured-essentials-1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Heading2">
+<h1 id="Heading2">Featured Essentials</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_featured-essentials-2">
+<div id="featured-essentials-2">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_featured-items-grid">
+<div id="featured-items-grid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_featured-items-grid-1">
+<div id="featured-items-grid-1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Image1">
+<img src="images/Chips001.png" id="Image1" alt="Potato Chips" width="219" height="204">
+</div>
+<div id="wb_Text2">
+<p>Potato Chips</p>
+</div>
+<div id="wb_Text3">
+<p>$2.49</p>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_Image2">
+<img src="images/Soda1.png" id="Image2" alt="Soda Can" width="219" height="204">
+</div>
+<div id="wb_Text4">
+<p>Refreshing Soda</p>
+</div>
+<div id="wb_Text5">
+<p>$1.99</p>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div class="col-3-padding">
+<div id="wb_Image3">
+<img src="images/BottleWater1.png" id="Image3" alt="Bottled Water" width="219" height="204">
+</div>
+<div id="wb_Text6">
+<p>Spring Water</p>
+</div>
+<div id="wb_Text7">
+<p>$1.29</p>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="col-4-padding">
+<div id="wb_Image4">
+<img src="images/Candy1.png" id="Image4" alt="Candy Bar" width="219" height="204">
+</div>
+<div id="wb_Text8">
+<p>Sweet Candy</p>
+</div>
+<div id="wb_Text9">
+<p>$1.50</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_featured-items-grid-2">
+<div id="featured-items-grid-2">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Image5">
+<img src="images/Bread1.png" id="Image5" alt="Loaf of Bread" width="219" height="204">
+</div>
+<div id="wb_Text10">
+<p>Fresh Bread</p>
+</div>
+<div id="wb_Text11">
+<p>$3.79</p>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_Image6">
+<img src="images/Milk1.png" id="Image6" alt="Milk Carton" width="219" height="204">
+</div>
+<div id="wb_Text12">
+<p>Dairy Milk</p>
+</div>
+<div id="wb_Text13">
+<p>$4.29</p>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div class="col-3-padding">
+<div id="wb_Image7">
+<img src="images/Eggs1.png" id="Image7" alt="Eggs Carton" width="219" height="204">
+</div>
+<div id="wb_Text14">
+<p>Farm Eggs</p>
+</div>
+<div id="wb_Text15">
+<p>$3.99</p>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="col-4-padding">
+<div id="wb_Image8">
+<img src="images/Fruit1.png" id="Image8" alt="Fresh Fruit" width="219" height="204">
+</div>
+<div id="wb_Text16">
+<p>Seasonal Fruit</p>
+</div>
+<div id="wb_Text17">
+<p>From $0.89/lb</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_fresh-produce">
+<div id="fresh-produce">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_fresh-produce-1">
+<div id="fresh-produce-1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Heading3">
+<h1 id="Heading3">DISCOUNT STOP MARKET</h1>
+</div>
+<div id="wb_Heading6">
+<h1 id="Heading6">FISH & CHIPS</h1>
+</div>
+<div id="wb_Image12">
+<img src="images/FishChipsBGlogo02.png" id="Image12" alt="" width="1157" height="484">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid4">
+<div id="LayoutGrid4">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_LayoutGrid5">
+<div id="LayoutGrid5">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Heading7">
+<h1 id="Heading7">DISCOUNT STOP MARKET</h1>
+</div>
+<div id="wb_Heading8">
+<h1 id="Heading8">FISH & CHIPS</h1>
+</div>
+<div id="wb_Image9">
+<img src="images/FishChipsBGlogo02.png" id="Image9" alt="" width="1157" height="484">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_gallery3PhotoGallery">
+<div id="gallery3PhotoGallery">
+<div class="thumbnails">
+<div class="thumbnail">
+<a href="images/3PieceFishSpecial01.png" data-rel="" title="3-PIECE FISH SPECIAL"><img alt="" src="images/3PieceFishSpecial01.png" loading="lazy" class="image" title="3-PIECE FISH SPECIAL" width="376" height="209"></a>
+<div class="caption">3-PIECE FISH SPECIAL</div>
+</div>
+<div class="thumbnail">
+<a href="images/5PieceFishSpecial01.png" data-rel="" title="5-PIECE FISH SPECIAL"><img alt="" src="images/5PieceFishSpecial01.png" loading="lazy" class="image" title="5-PIECE FISH SPECIAL" width="376" height="209"></a>
+<div class="caption">5-PIECE FISH SPECIAL</div>
+</div>
+<div class="thumbnail">
+<a href="images/ShrimpSpecial01.png" data-rel="" title="SHRIMP"><img alt="" src="images/ShrimpSpecial01.png" loading="lazy" class="image" title="SHRIMP" width="376" height="209"></a>
+<div class="caption">SHRIMP</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_PhotoGallery1">
+<div id="PhotoGallery1">
+<div class="thumbnails">
+<div class="thumbnail">
+<a href="images/Combos01.png" data-rel="" title="COMBOS"><img alt="" src="images/Combos01.png" loading="lazy" class="image" title="COMBOS" width="366" height="204"></a>
+<div class="caption">COMBOS</div>
+</div>
+<div class="thumbnail">
+<a href="images/Sides01.png" data-rel="" title="SIDES"><img alt="" src="images/Sides01.png" loading="lazy" class="image" title="SIDES" width="366" height="204"></a>
+<div class="caption">SIDES</div>
+</div>
+<div class="thumbnail">
+<a href="images/GeorgeSpecialFishSandwich01.png" data-rel="" title="GEORGE SPECIAL"><img alt="" src="images/GeorgeSpecialFishSandwich01.png" loading="lazy" class="image" title="GEORGE SPECIAL" width="366" height="203"></a>
+<div class="caption">GEORGE SPECIAL</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid6">
+<div id="LayoutGrid6">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_PhotoGallery2">
+<div id="PhotoGallery2">
+<div class="thumbnails">
+<div class="thumbnail">
+<a href="images/3PieceFishSpecial01.png" data-rel="" title="3-PIECE FISH SPECIAL"><img alt="" id="PhotoGallery2_img0" src="images/3PieceFishSpecial01.png" loading="lazy" class="image" width="366" height="204"><div class="caption"><span class="title">3-PIECE FISH SPECIAL</span></div></a>
+</div>
+<div class="thumbnail">
+<a href="images/5PieceFishSpecial01.png" data-rel="" title="5-PIECE FISH SPECIAL"><img alt="" id="PhotoGallery2_img1" src="images/5PieceFishSpecial01.png" loading="lazy" class="image" width="366" height="204"><div class="caption"><span class="title">5-PIECE FISH SPECIAL</span></div></a>
+</div>
+<div class="thumbnail">
+<a href="images/ShrimpSpecial01.png" data-rel="" title="SHRIMP"><img alt="" id="PhotoGallery2_img2" src="images/ShrimpSpecial01.png" loading="lazy" class="image" width="366" height="204"><div class="caption"><span class="title">SHRIMP</span></div></a>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_PhotoGallery3">
+<div id="PhotoGallery3">
+<div class="thumbnails">
+<div class="thumbnail">
+<a href="images/Combos01.png" data-rel="" title="COMBOS"><img alt="" id="PhotoGallery3_img0" src="images/Combos01.png" loading="lazy" class="image" width="366" height="204"><div class="caption"><span class="title">COMBOS</span></div></a>
+</div>
+<div class="thumbnail">
+<a href="images/Sides01.png" data-rel="" title="SIDES"><img alt="" id="PhotoGallery3_img1" src="images/Sides01.png" loading="lazy" class="image" width="366" height="204"><div class="caption"><span class="title">SIDES</span></div></a>
+</div>
+<div class="thumbnail">
+<a href="images/GeorgeSpecialFishSandwich01.png" data-rel="" title="GEORGE SPECIAL"><img alt="" id="PhotoGallery3_img2" src="images/GeorgeSpecialFishSandwich01.png" loading="lazy" class="image" width="366" height="203"><div class="caption"><span class="title">GEORGE SPECIAL</span></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid3">
+<div id="LayoutGrid3">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Text18">
+<span style="color:#FFFFFF;font-family:Roboto;font-size:29px;"><strong>CALL NOW TO ORDER</strong></span>
+</div>
+<a id="Button2" href="tel:+1 772-528-0065">Order</a>
+</div>
+<div class="col-3">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_neighborhood-message">
+<div id="neighborhood-message">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Text31">
+<p>"Serving our community with everyday essentials, fresh items, and friendly service. We're more than a store, we're your neighbors!"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_store-hours">
+<div id="store-hours">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_store-hours-1">
+<div id="store-hours-1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Heading5">
+<h1 id="Heading5">Store Hours</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_store-hours-2">
+<div id="store-hours-2">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_hours-card" class="card">
+<div id="hours-card-card-body">
+<div id="hours-card-card-item0">Open Daily</div>
+<div id="hours-card-card-item1">Monday – Friday: 7:00 AM – 9:00 PM</div>
+<div id="hours-card-card-item2">Saturday: 8:00 AM – 8:00 PM</div>
+<div id="hours-card-card-item3">Sunday: 9:00 AM – 6:00 PM</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="Html1">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.069662873411!2d-118.9981731233291!3d35.35391743640689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ea6bb4c2214f61%3A0xbbd78aad2893d80e!2s503%20E%20Brundage%20Ln%2C%20Bakersfield%2C%20CA%2093307!5e0!3m2!1sen!2sus!4v1782939484842!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<div id="Html2">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.069662873411!2d-118.9981731233291!3d35.35391743640689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ea6bb4c2214f61%3A0xbbd78aad2893d80e!2s503%20E%20Brundage%20Ln%2C%20Bakersfield%2C%20CA%2093307!5e0!3m2!1sen!2sus!4v1782939484842!5m2!1sen!2sus" width="296" height="248" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_footer">
+<div id="footer">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Text32">
+<p>DISCOUNT STOP MARKET</p>
+</div>
+<div id="wb_Text33">
+<p>Proudly serving our neighborhood.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="OverlayMenu1-overlay">
+<div class="OverlayMenu1">
+<ul class="drilldown-menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="menu">
+<li><a role="menuitem" href="#featured-essentials-1" title="Featured Essentials" class="OverlayMenu1-effect wb-theme-button"><i class="fa fa-book overlay-icon"></i>Featured&nbsp;Essentials</a></li>
+<li><a role="menuitem" href="#LayoutGrid5" title="Fish &amp; Chips" class="OverlayMenu1-effect wb-theme-button"><i class="fa fa-gear overlay-icon"></i>Fish&nbsp;&amp;&nbsp;Chips</a></li>
+<li><a role="menuitem" href="#store-hours-1" title="Store Hours &amp; Map" class="OverlayMenu1-effect wb-theme-button"><i class="fa fa-user overlay-icon"></i>Store&nbsp;Hours&nbsp;&amp;&nbsp;Map</a></li>
+</ul>
+</div>
+<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
+</div>
+</body>
+</html>
